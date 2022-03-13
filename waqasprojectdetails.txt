@@ -1,0 +1,25 @@
+Home
+Blog
+About
+Contact
+404
+Products
+Product
+Cart
+checkout
+-------------------------------
+Admin Pannel :
+	Dashboard
+	Products
+		- Add Products
+		- Products
+		- Single Product
+	Orders
+		- New Orders
+		- Progress
+		- Completed
+	Customers
+	Category
+	Settings
+	Blog
+	Logout
