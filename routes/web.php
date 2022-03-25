@@ -14,10 +14,20 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/','PagesController@home')->name('home');
+
 Route::get('/about','PagesController@about')->name('about');
+
 Route::get('/contact','PagesController@contact')->name('contact');
 
-
 Auth::routes();
+/*
+
+Route::prefix('admin')->group(funtion(){
+
+	Route::get('/user',function(){
+		return "check";
+	});
+});
+*/
 
 //Route::get('/home', [HomeController::class, 'index'])->name('home');

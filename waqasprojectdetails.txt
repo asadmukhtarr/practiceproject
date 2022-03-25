@@ -1,3 +1,5 @@
+Route -. Controller -> view -> model -> databse -> ciew
+----------------------------------
 Home
 Blog
 About
