@@ -8,9 +8,7 @@ class pagesController extends Controller
 {
     // home
     public function home(){
-        $categories = category::all();
-        return $categories;
-        //return view('welcome');
+        return view('welcome');
     }
     // about
     public function about(){
