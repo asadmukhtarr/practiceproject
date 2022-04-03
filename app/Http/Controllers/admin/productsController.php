@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\category;
+use App\Models\product;
 
 class productsController extends Controller
 {
@@ -15,6 +17,8 @@ class productsController extends Controller
     public function index()
     {
         //
+        $products = product::orderby('id','desc')->get();
+        return view('admin.products.list', compact('products'));
     }
 
     /**
@@ -25,6 +29,8 @@ class productsController extends Controller
     public function create()
     {
         //
+        $categories = category::all();
+        return view('admin.products.create', compact('categories'));
     }
 
     /**
@@ -36,6 +42,20 @@ class productsController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'name' => 'required|min:8',
+            'qty' => 'required',
+            'price' => 'required',
+            'category' => 'required',
+        ]);
+        
+        $product = new product;
+        $product->name  = $request->name;
+        $product->qty   = $request->qty;
+        $product->price = $request->price;
+        $product->category_id = $request->category;
+        $product->save();   
+        return redirect(route('products.index'))->with('message','Product Added Successfully');
     }
 
     /**

@@ -30,6 +30,7 @@ Route::prefix('management')->namespace('admin')->group(function(){
 		Route::get('/edit/{id}','categoriesController@edit')->name('admin.editcat');
 		Route::post('/update/{id}','categoriesController@update')->name('admin.updatecat');
 	});
+	Route::resource('/products','productsController');
 });
 
 //Route::get('/home', [HomeController::class, 'index'])->name('home');
